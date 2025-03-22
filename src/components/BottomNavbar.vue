@@ -13,35 +13,37 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
-import NavbarItem from './NavbarItem.vue'
+import { ref, watch } from 'vue';
+import { useRouter } from 'vue-router';
+import NavbarItem from './NavbarItem.vue';
 
-const router = useRouter()
+const router = useRouter();
 const navItems = ref([
   { name: '首页', icon: 'home', path: '/home' },
   { name: '找帖子', icon: 'team', path: '/students' },
-  { name: '资料卡填写', icon: 'schedule', path: '/schedule' },
+  { name: '资料卡填写', icon: 'edit', path: '/teacherpost' },
   { name: '我的', icon: 'user', path: '/profile' },
-])
+]);
 
 // 当前激活的导航项
-const activeIndex = ref(0)
+const activeIndex = ref(0);
 watch(
   () => router.currentRoute.value.path,
   (newPath) => {
-    activeIndex.value = navItems.value.findIndex((item) => item.path === newPath)
+    activeIndex.value = navItems.value.findIndex(
+      (item) => item.path === newPath
+    );
   },
   {
     immediate: true,
-  },
-)
+  }
+);
 
 // 点击导航项时切换路由
 const handleClick = (index) => {
-  activeIndex.value = index
-  router.push(navItems.value[index].path)
-}
+  activeIndex.value = index;
+  router.push(navItems.value[index].path);
+};
 </script>
 
 <style scoped>

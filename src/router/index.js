@@ -12,7 +12,7 @@ const routes = [
     component: () => import('../views/Login.vue'),
     meta: {
       showNav: false,
-      requiresAuth: false
+      requiresAuth: false,
     },
   },
   {
@@ -21,7 +21,7 @@ const routes = [
     component: () => import('../views/Register.vue'),
     meta: {
       showNav: false,
-      requiresAuth: false
+      requiresAuth: false,
     },
   },
   {
@@ -30,7 +30,7 @@ const routes = [
     component: () => import('../views/Home.vue'),
     meta: {
       showNav: true,
-      requiresAuth: true
+      requiresAuth: true,
     },
   },
   {
@@ -39,7 +39,7 @@ const routes = [
     component: () => import('../views/Students.vue'),
     meta: {
       showNav: true,
-      requiresAuth: true
+      requiresAuth: true,
     },
   },
   {
@@ -48,7 +48,7 @@ const routes = [
     component: () => import('../views/Schedule.vue'),
     meta: {
       showNav: true,
-      requiresAuth: true
+      requiresAuth: true,
     },
   },
   {
@@ -57,7 +57,25 @@ const routes = [
     component: () => import('../views/Profile.vue'),
     meta: {
       showNav: true,
-      requiresAuth: true
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/teacherpost',
+    name: 'Post',
+    component: () => import('../views/TeacherPost.vue'),
+    meta: {
+      showNav: true,
+      requiresAuth: true,
+    },
+  },
+  {
+    path: '/messages',
+    name: 'MessageCenter',
+    component: () => import('../views/MessageCenter.vue'),
+    meta: {
+      showNav: true,
+      requiresAuth: true,
     },
   },
 ];
